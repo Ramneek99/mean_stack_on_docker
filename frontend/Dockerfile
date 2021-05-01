@@ -2,9 +2,7 @@
 FROM node:10.12 as node
 WORKDIR /app
 COPY . .
-RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y nodejs \
-    npm 
+RUN npm cache clean --force
 RUN npm install
 RUN npm run build --prod
 

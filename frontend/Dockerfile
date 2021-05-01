@@ -2,7 +2,7 @@
 FROM node:10.12 as node
 WORKDIR /app
 COPY . .
-RUN RUN npm --verbose install
+RUN npm install
 RUN npm run build --prod
 
 # # stage 2

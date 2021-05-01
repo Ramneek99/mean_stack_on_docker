@@ -2,7 +2,7 @@
 FROM node:10.12 as node
 WORKDIR /app
 COPY . .
-RUN npm install
+RUN apt-get update -qq && apt-get install -y build-essential nodejs
 RUN npm run build --prod
 
 # # stage 2

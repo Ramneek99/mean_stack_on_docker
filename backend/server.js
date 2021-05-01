@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 mongoose.Promise = Promise;
 
-mongoose.connect('mongodb://sample:sample@mongo/blog', { useNewUrlParser: true });
+mongoose.connect('mongodb://username:password@mongo/admin', { useNewUrlParser: true });
 
 const connection = mongoose.connection;
 

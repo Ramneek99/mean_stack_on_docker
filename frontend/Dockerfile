@@ -2,8 +2,7 @@
 FROM node:10.12 as node
 WORKDIR /app
 COPY . .
-RUN npm cache clean --force
-RUN npm install
+RUN sudo apt install npm
 RUN npm run build --prod
 
 # # stage 2

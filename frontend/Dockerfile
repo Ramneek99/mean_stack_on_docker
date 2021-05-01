@@ -2,9 +2,8 @@
 FROM node:10.12 as node
 WORKDIR /app
 COPY . .
-# RUN npm install
-# RUN npm run build --prod
-CMD ["npm", "start"]
+RUN npm --verbose install
+RUN npm run build
 
 # # stage 2
 FROM nginx:alpine

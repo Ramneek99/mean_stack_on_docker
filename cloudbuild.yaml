@@ -1,5 +1,6 @@
 steps:
-  # running docker-compose
-  - name: 'docker/compose:1.26.2'
-    args: ['up', '-d', '-t', 'gcr.io/pelagic-plexus-311018/mean_stack_on_docker_cloud', '.']
-images: ['gcr.io/pelagic-plexus-311018/mean_stack_on_docker_cloud']
+- name: 'docker/compose:1.26.2'
+  args: ['up', '-d']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'mean_stack_on_docker_cloud:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SH']
+images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SH']

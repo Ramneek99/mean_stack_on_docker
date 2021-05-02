@@ -2,3 +2,4 @@ steps:
   # running docker-compose
   - name: 'docker/compose:1.26.2'
     args: ['up', '-d']
+  images: ['gcr.io/pelagic-plexus-311018/mean_stack_on_docker_cloud']
